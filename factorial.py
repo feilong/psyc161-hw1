@@ -103,6 +103,7 @@ def test_factorial():
     """Test those factorial functions."""
     for func in (factorial_recursive, factorial_reduce, factorial_loop):
         assert_raises(ValueError, func, -1)
+        assert_raises(TypeError, func, '12')
         assert_equal(func(0), 1)
         assert_equal(func(1), 1)
         assert_equal(func(5), 120)
